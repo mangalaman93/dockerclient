@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/samalba/dockerclient"
+	"github.com/mangalaman93/dockerclient"
 	"log"
 	"os"
 	"os/signal"

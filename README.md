@@ -1,8 +1,8 @@
 Docker client library in Go
 ===========================
-[![GoDoc](http://godoc.org/github.com/samalba/dockerclient?status.png)](http://godoc.org/github.com/samalba/dockerclient)
+[![GoDoc](http://godoc.org/github.com/mangalaman93/dockerclient?status.png)](http://godoc.org/github.com/mangalaman93/dockerclient)
 
-Well maintained docker client library.
+Well maintained docker client library. It is modified version of [samalba/dockerclient/](https://github.com/samalba/dockerclient) with additional feature of `docker set` command. This command has not been implemented yet in docker standard repository. For more details, checkout this [docker repository](https://github.com/mangalaman93/docker)
 
 # How to use it?
 
@@ -12,7 +12,7 @@ Here is an example showing how to use it:
 package main
 
 import (
-	"github.com/samalba/dockerclient"
+	"github.com/mangalaman93/dockerclient"
 	"log"
 	"time"
 	"os"
