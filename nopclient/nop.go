@@ -54,6 +54,10 @@ func (client *NopClient) StartContainer(id string, config *dockerclient.HostConf
 	return ErrNoEngine
 }
 
+func (client *NopClient) SetContainer(id string, config *dockerclient.HostConfig) error {
+	return ErrNoEngine
+}
+
 func (client *NopClient) StopContainer(id string, timeout int) error {
 	return ErrNoEngine
 }

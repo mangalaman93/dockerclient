@@ -371,6 +371,20 @@ func (client *DockerClient) StartContainer(id string, config *HostConfig) error 
 	return nil
 }
 
+func (client *DockerClient) SetContainer(id string, config *HostConfig) error {
+	data, err := json.Marshal(config)
+	if err != nil {
+		return err
+	}
+
+	uri := fmt.Sprintf("/%s/containers/%s/set", APIVersion, id)
+	_, err = client.doRequest("POST", uri, data, nil)
+	if err != nil {
+		return err
+	}
+	return nil
+}
+
 func (client *DockerClient) StopContainer(id string, timeout int) error {
 	uri := fmt.Sprintf("/%s/containers/%s/stop?t=%d", APIVersion, id, timeout)
 	_, err := client.doRequest("POST", uri, nil, nil)

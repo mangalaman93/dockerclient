@@ -60,6 +60,11 @@ func (client *MockClient) StartContainer(id string, config *dockerclient.HostCon
 	return args.Error(0)
 }
 
+func (client *MockClient) SetContainer(id string, config *dockerclient.HostConfig) error {
+	args := client.Mock.Called(id, config)
+	return args.Error(0)
+}
+
 func (client *MockClient) StopContainer(id string, timeout int) error {
 	args := client.Mock.Called(id, timeout)
 	return args.Error(0)
